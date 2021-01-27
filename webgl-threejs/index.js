@@ -18,3 +18,7 @@ if (document.readyState === 'complete' || (document.readyState !== 'loading' && 
 } else {
     document.addEventListener('DOMContentLoaded', initApp)
 }
+
+window.addEventListener('resize', function() {
+    initApp()
+});
