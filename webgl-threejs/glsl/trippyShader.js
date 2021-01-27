@@ -161,9 +161,9 @@ const trippyShader = `
       vec4 image = texture2D(u_hovermap, uv_h);
       vec4 imageDistorted = texture2D(u_map, uv + vec2(nh) * progressHover);
 
-      float finalMask = smoothstep(.99, 1., pow(c, 2.) * 4. + nc * (1. - progress));
+      float finalMask = smoothstep(.99, 1., pow(c, 2.));
 
-      vec4 finalImage = mix(imageDistorted, image, clamp(finalMask + progress, 0., 1.));
+      vec4 finalImage = mix(imageDistorted, image, clamp(finalMask + progress, 0., 5.));
 
       gl_FragColor = vec4(finalImage.rgb, u_alpha);
       }

@@ -180,6 +180,7 @@ class Tile {
         this.prevScroll = this.scroll
 
         if (!this.isHovering) return
+        
         this.uniforms.u_time.value += this.clock.getDelta()
     }
 
