@@ -144,7 +144,7 @@ void main() {
 
   float offX = uv.x + sin(uv.y + time * 2.);
   float offY = uv.y - time * .2 - cos(time * 2.) * 0.0001;
-  float nc = (snoise(vec3(offX, offY, mouse) * 8.)) * progressHover;
+  float nc = (snoise(vec3(offX, offY, mouse) * 5.)) * progressHover;
   float nh = (snoise(vec3(offX, offY, mouse ) * 2.)) * .1;
 
   uv_h -= vec2(0.5);
