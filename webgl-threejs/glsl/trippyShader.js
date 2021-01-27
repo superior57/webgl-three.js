@@ -135,7 +135,7 @@ void main() {
   vec2 st = gl_FragCoord.xy / resolution.xy - vec2(.5);
   st.y *= resolution.y / resolution.x;
 
-  vec2 mouse = vec2((u_mouse.x / u_res.x) * 2. - 1.,-(u_mouse.y / u_res.y) * 2. + 1.) * -.5;
+  vec2 mouse = vec2((u_mouse.x / u_res.x) * 8. - 1.,-(u_mouse.y / u_res.y) * 8. + 1.) * -.5;
   mouse.y *= resolution.y / resolution.x;
 
   vec2 cpos = st + mouse;
@@ -144,8 +144,8 @@ void main() {
 
   float offX = uv.x + sin(uv.y + time * 2.);
   float offY = uv.y - time * .2 - cos(time * 2.) * 0.0001;
-  float nc = (snoise(vec3(offX, offY, mouse) * 5.)) * progressHover;
-  float nh = (snoise(vec3(offX, offY, mouse ) * 2.)) * .1;
+  float nc = (snoise(vec3(offX, offY, mouse) * 2.)) * progressHover;
+  float nh = (snoise(vec3(offX, offY, mouse ) * 1.)) * .3;
 
   uv_h -= vec2(0.5);
   uv_h *= 1. - u_progressHover * 0.1;
